@@ -5,7 +5,6 @@ require 'json'
 
 Plugin.create(:meshi) do
   filter_gui_postbox_post do |gui_postbox|
-    puts "cccccc"
     buf = Plugin.create(:gtk).widgetof(gui_postbox).widget_post.buffer
     text = buf.text
     if /<<([^>]+)>>/ =~ text then
