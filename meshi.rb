@@ -12,7 +12,7 @@ Plugin.create(:meshi) do
       response=open(uri)
       data = JSON.load(response.read)
       str = data["responseData"]["results"].find { |_| 
-      (_["unescapedUrl"] != nil) && _["unescapedUrl"] =~ /(jpg)$/ }["unescapedUrl"]
+      (_["unescapedUrl"] != nil) && _["unescapedUrl"] =~ /(jpg|png|gif)$/ }["unescapedUrl"]
 
       text[/<<([^>]+)>>/,0] = str
     end
